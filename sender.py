@@ -37,7 +37,6 @@ if __name__ == "__main__":
     token = sys.argv[1]
     subject = sys.argv[2]
     msg = sys.argv[3]
-    print "###",msg,"###"
     markdown = MarkDown()
     mdText = markdown.mdData(msg)
     ding = DingTalk(token)

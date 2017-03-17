@@ -12,7 +12,6 @@ import time
 
 class ZabbixGraph(object): 
     def __init__(self):
-        
         self.cas_host = "auth.corp.flamingo-inc.com"
         self.rest_endpoint = "/v1/tickets/"
         self.params = urllib.urlencode({'username': 'tsupport', 'password': 'password','token':'Saportal_308sdfllsa'})
