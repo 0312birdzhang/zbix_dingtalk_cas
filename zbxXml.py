@@ -62,6 +62,7 @@ class MarkDown(object):
         fastdfs = FastDFS(eventid,status)
         fastdfs.mkfile(graph)
         graph_url = fastdfs.upload()
+        fastdfs.delfile()
         mdStyle = u"""##### %s
         
 ###### 告警级别：%s

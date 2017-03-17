@@ -30,7 +30,7 @@ class FastDFS(object):
         self.__appid__ = "8157239032"
         self.__appsecret__ = "quoACsyrHILKKFKFzBDs"
         self.upurl = "http://upload.corp.flamingo-inc.com/"
-        self.uri = "zbx/%s/%s_%s.png" %(time.strftime("%Y%m%d%H"),eventid,status)
+        self.uri = "zbx/%s/%s_%s.png" %(time.strftime("%Y%m%d%H"),str(eventid),str(status))
         self.filename = "%s_%s.png" %(eventid,status)
         self.response = Response()
         self.curl = pycurl.Curl()
@@ -43,21 +43,20 @@ class FastDFS(object):
         self.curl.setopt(pycurl.SSL_VERIFYHOST, 0)
         self.curl.setopt(pycurl.HTTPHEADER, ['Content-Type: multipart/form-data'])
         self.curl.setopt(pycurl.HTTPPOST,[
-            ('filename',          (pycurl.FORM_FILE, self.filename)),
+            ('filename',          (pycurl.FORM_FILE, str(self.filename))),\
             ('filelength',        (pycurl.FORM_CONTENTS, str(file_size))),\
             ('content-type',      (pycurl.FORM_CONTENTS, "image/png")), \
             ('canupdate',             (pycurl.FORM_CONTENTS,"true")), \
-            ('appid',             (pycurl.FORM_CONTENTS,self.__appid__)), \
+            ('appid',             (pycurl.FORM_CONTENTS,str(self.__appid__))), \
             ('description',             (pycurl.FORM_CONTENTS,"")), \
             ('precache',            (pycurl.FORM_CONTENTS,"false")), \
-            ('appsecret',             (pycurl.FORM_CONTENTS,self.__appsecret__)), \
-            ('uri',             (pycurl.FORM_CONTENTS,self.uri))
+            ('appsecret',             (pycurl.FORM_CONTENTS,str(self.__appsecret__))), \
+            ('uri',               (pycurl.FORM_CONTENTS,str(self.uri)))
         ])
         try:
             self.curl.perform()
             resp = self.response.content().decode("utf-8")
             downurl = json.loads(resp).get("message")
-            self.delfile()
             return downurl
         except Exception ,e:
             print e
