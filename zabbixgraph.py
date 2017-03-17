@@ -12,11 +12,11 @@ import time
 
 class ZabbixGraph(object): 
     def __init__(self):
-        self.cas_host = "auth.corp.flamingo-inc.com"
+        self.cas_host = "auth.com"
         self.rest_endpoint = "/v1/tickets/"
         self.params = urllib.urlencode({'username': 'tsupport', 'password': 'password','token':'Saportal_308sdfllsa'})
         self.headers = {"Content-type": "application/x-www-form-urlencoded", "Accept": "text/plain", "User-Agent":"python" }
-        self.url = 'http://zabbix.corp.flamingo-inc.com'
+        self.url = 'http://zabbix.com'
         self.service  = self.url +'/index.php'
     
     def getGraph(self,itemid,stime,width=800,height=600,based=True):
@@ -35,7 +35,7 @@ class ZabbixGraph(object):
         # print "***"
          
         # 2. Grab a service ticket (ST) for a CAS protected service
-        #http://zabbix.corp.flamingo-inc.com/chart2.php?graphid=918&period=3600&stime=20180317090528&updateProfile=1&profileIdx=web.screens&profileIdx2=918&width=1778 
+        #http://zabbix.com/chart2.php?graphid=918&period=3600&stime=20180317090528&updateProfile=1&profileIdx=web.screens&profileIdx2=918&width=1778 
         params = urllib.urlencode({'service': self.service })
         conn = httplib.HTTPSConnection(self.cas_host)
         conn.request("POST", "%s%s" % ( self.rest_endpoint, tgt ), params, self.headers)

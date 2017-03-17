@@ -29,7 +29,7 @@ class FastDFS(object):
     def __init__(self,eventid,status):
         self.__appid__ = "8157239032"
         self.__appsecret__ = "quoACsyrHILKKFKFzBDs"
-        self.upurl = "http://upload.corp.flamingo-inc.com/"
+        self.upurl = "http://upload.com/"
         self.uri = "zbx/%s/%s_%s.png" %(time.strftime("%Y%m%d%H"),str(eventid),str(status))
         self.filename = "%s_%s.png" %(eventid,status)
         self.response = Response()

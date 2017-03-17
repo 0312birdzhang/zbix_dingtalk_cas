@@ -101,16 +101,16 @@ if __name__ == "__main__":
     #data = '''<?xml version="1.0" encoding="UTF-8"?><note><to>World</to><from>Linvo</from><heading>Hi</heading><body>Hello World!</body></note>'''
     data = """<?xml version="1.0" encoding="utf-8"?> 
 <root> 
-<from>pxxzsassapi01.rmz.flamingo-inc.com</from> 
+<from>pxxzsass.com</from> 
 <time>2017.03.17 09:51:47</time> 
 <level>Average</level> 
-<name>PROBLEM:Nginx Error great than 50 twices in 3 mins on pxxzsassapi01.rmz.flamingo-inc.com</name> 
+<name>PROBLEM:Nginx Error great than 50 twices in 3 mins on pxxzsass.com</name> 
 <key>ngx_errors</key> 
 <value>575</value> 
 <now>575</now> 
 <id>3801845</id> 
 <ip>10.8.8.87</ip> 
-<url>http://zabbix.corp.flamingo-inc.com/tr_events.php?triggerid=23004&amp;eventid=3801845</url> 
+<url>http://zabbix.com/tr_events.php?triggerid=23004&amp;eventid=3801845</url> 
 <age>0m</age> 
 <itemid>37082</itemid>
 <status>PROBLEM</status> 
