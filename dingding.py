@@ -80,5 +80,5 @@ class DingTalk(object):
         return self.__netsender(datas)
 
 if __name__ == "__main__":
-    dingtalk = DingTalk("https://oapi.dingtalk.com/robot/send?access_token=74eef3052878a2a5f9150a2438dd677ebdb39484593fb39263ea7177878e695d")
-    print dingtalk.senderMarkdown("图片测试", " ![screen](http://img.guopan.cn/2017-03-17/1489731921134.jpg)")
+    dingtalk = DingTalk("https://oapi.dingtalk.com/robot/send?access_token=your_token")
+    print dingtalk.senderMarkdown("图片测试", " ![screen](http://test.com/2017-03-17/1489731921134.jpg)")
